@@ -1,0 +1,112 @@
+<!--Template from Google Charts -->
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Students');
+        data.addRows([
+
+['Novice-Mid (pre)','Novice-Low (post)',0],
+['Novice-Low (pre)','Novice-High (post)',6],
+['Novice-High (pre)','Novice-Low (post)',0],
+['Novice-Low (pre)','Novice-Mid (post)',2],
+['Novice-Low (pre)','Intermediate-Low (post)',13],
+['Intermediate-Low (pre)','Novice-Low (post)',0],
+['Novice-Low (pre)','Intermediate-Mid (post)',16],
+['Intermediate-Mid (pre)','Novice-Low (post)',0],
+['Novice-Low (pre)','Intermediate-High (post)',12],
+['Intermediate-High (pre)','Novice-Low (post)',0],
+['Novice-Mid (pre)','Novice-High (post)',3],
+['Novice-High (pre)','Novice-Mid (post)',0],
+['Novice-Mid (pre)','Intermediate-Low (post)',10],
+['Intermediate-Low (pre)','Novice-Mid (post)',0],
+['Novice-Mid (pre)','Intermediate-Mid (post)',18],
+['Intermediate-Mid (pre)','Novice-Mid (post)',0],
+['Novice-Mid (pre)','Intermediate-High (post)',6],
+['Intermediate-High (pre)','Novice-Mid (post)',0],
+['Novice-Mid (pre)','Advanced-Low (post)',1],
+/*['Advanced-Low (pre)','Novice-Mid (post)',0],*/
+['Novice-High (pre)','Intermediate-Low (post)',8],
+['Intermediate-Low (pre)','Novice-High (post)',0],
+['Novice-High (pre)','Intermediate-Mid (post)',19],
+['Intermediate-Mid (pre)','Novice-High (post)',0],
+['Novice-High (pre)','Intermediate-High (post)',18],
+['Intermediate-High (pre)','Novice-High (post)',0],
+['Novice-High (pre)','Advanced-Low (post)',8],
+/*['Advanced-Low (pre)','Novice-High (post)',0],*/
+['Novice-High (pre)','Advanced-Mid (post)',2],
+/*['Advanced-Mid (pre)','Novice-High (post)',0],*/
+['Intermediate-Low (pre)','Intermediate-Low (post)',4],
+['Intermediate-Low (pre)','Intermediate-Mid (post)',20],
+['Intermediate-Low (pre)','Intermediate-High (post)',34],
+['Intermediate-High (pre)','Intermediate-Low (post)',0],
+['Intermediate-Low (pre)','Advanced-Low (post)',13],
+['Intermediate-Low (pre)','Advanced-Mid (post)',4],
+/*['Advanced-Mid (pre)','Intermediate-Low (post)',0],*/
+['Intermediate-Mid (pre)','Intermediate-Low (post)',1],
+['Intermediate-Mid (pre)','Intermediate-Mid (post)',12],
+['Intermediate-Mid (pre)','Intermediate-High (post)',47],
+['Intermediate-Mid (pre)','Advanced-Low (post)',44],
+['Intermediate-Mid (pre)','Advanced-Mid (post)',22],
+['Intermediate-Mid (pre)','Advanced-High (post)',2],
+['Intermediate-High (pre)','Intermediate-Mid (post)',2],
+['Intermediate-High (pre)','Intermediate-High (post)',14],
+['Intermediate-High (pre)','Advanced-Low (post)',44],
+['Intermediate-High (pre)','Advanced-Mid (post)',26],
+['Intermediate-High (pre)','Advanced-High (post)',5],
+/*['Advanced-Low (pre)','Intermediate-Low (post)',0],
+['Advanced-Low (pre)','Intermediate-High (post)',2],
+['Advanced-Low (pre)','Advanced-Low (post)',20],
+['Advanced-Low (pre)','Advanced-Mid (post)',32],
+['Advanced-Low (pre)','Advanced-High (post)',9],
+['Advanced-Mid (pre)','Advanced-Low (post)',1],
+['Advanced-Mid (pre)','Advanced-Mid (post)',20],
+['Advanced-Mid (pre)','Advanced-High (post)',5],
+['Advanced-High (pre)','Advanced-Mid (post)',1],
+['Advanced-High (pre)','Advanced-High (post)',1],
+['Advanced-High (pre)','Superior (post)',3],
+['Superior (pre)','Advanced-High (post)',0]*/
+
+        ]);
+var colors = ['#a6cee3', '#b2df8a', '#cab2d6', '#fdbf6f', '#33a02c','#fb9a99', 
+               '#808080', '#ffff99', '#8ab2df'];
+        // Sets chart options.
+        var options = {
+          width: 800,
+          height: 500,
+          sankey: {
+          node: {
+            colors: colors
+          },
+          link: {
+            colorMode: 'gradient',
+            colors: colors
+          }
+       }
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <style>
+  h1{
+    font-family: Calibri;
+    padding-left: 250px;
+  }
+  </style>
+  <body>
+    <h1>CLS Language Gains (2015)</h1>
+    <div id="sankey_basic" style="width: 900px; height: 700px;"></div>
+
+  </body>
+</html>
